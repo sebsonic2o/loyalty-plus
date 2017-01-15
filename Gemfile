@@ -39,6 +39,12 @@ gem 'puma', '~> 2.11.3'
 # Use Kaminari for pagination
 gem 'kaminari', '~> 0.16.3'
 
+group :production do
+  # Deploy to Heroku
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'heroku-deflater', '~> 0.6.2'
+end
+
 group :development, :test do
   # Use RSpec as testing framework
   gem 'rspec-rails', '~> 3.5'
