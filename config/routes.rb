@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users, skip: [:registrations, :passwords]
+  devise_for :customers, skip: [:registrations, :passwords]
 
-  devise_scope :user do
+  devise_scope :customer do
     root 'devise/sessions#new'
   end
 
-  authenticate :user do
+  authenticate :customer do
     resources :brands, only: :index
   end
 
