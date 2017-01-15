@@ -1,0 +1,5 @@
+<% if model.errors[attribute].any? %>
+  <span class="form-validation-error"><em>
+    <%= model.errors.messages[attribute].join ', ' %>.
+  </em></span>
+<% end %>

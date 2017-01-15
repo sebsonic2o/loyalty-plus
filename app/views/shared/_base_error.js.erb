@@ -1,0 +1,5 @@
+$('body').prepend("<div class='modal-wrapper'><div class='inner-box modal-box' style='width: 500px;'><div class='row'><div class='col-sm-12'><p class='text-alert' style='margin-bottom: 20px; font-size: 15px;'><%= model.errors.messages[:base].join ', ' %>.</p></div></div><span class='break-row'></span><div class='row'><div class='col-sm-12' style='margin-top: 10px; text-align: center;'><button type='button' id='modal-ok' class='btn btn-default' style='color: red; border-color: red;'>OK</button></div></div></div></div>");
+
+$('#modal-ok').on("click", function(e) {
+  $('.modal-wrapper').remove();
+});

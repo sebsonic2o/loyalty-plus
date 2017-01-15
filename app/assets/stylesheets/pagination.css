@@ -1,0 +1,38 @@
+#index-paginate {
+  width: 100%;
+  text-align: center;
+}
+
+#index-paginate > .pagination {
+  margin: 0;
+}
+
+.pagination a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 40px;
+  margin-bottom: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+  border: solid 1px #edeff1;
+  color: #919497;
+  text-decoration: none;
+}
+
+.pagination a:hover, .pagination a:focus {
+  border-color: #42a3db;
+  color: #42a3db;
+}
+
+.pagination .page.current {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 40px;
+  margin-bottom: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+  border: solid 1px #42a3db;
+  color: #42a3db;
+}
