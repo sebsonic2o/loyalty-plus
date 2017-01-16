@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+      <div class="inner-box">
+        <div class="page-header" style="margin-top: 0;">
+          <span class="h3"><%= @customer_account.brand.name %></span>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" style="padding-top: 3px; padding-bottom: 3px;">
+            <div class="row">
+              <div class="col-sm-12" style="margin: 7px auto;">
+                <div class="panel-title truncate" style="display: inline-block; width: 70%; margin-top: 3px;">
+                  <a data-toggle="collapse" href="#collapse_rewards" style="text-decoration: none;">
+                    Points: <%= @customer_account.points_balance %>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="collapse_rewards" class="panel-collapse collapse">
+            <div class="panel-body" style="padding-bottom: 0;">
+              TBD
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" style="padding-top: 3px; padding-bottom: 3px;">
+            <div class="row">
+              <div class="col-sm-12" style="margin: 7px auto;">
+                <div class="panel-title truncate" style="display: inline-block; width: 70%; margin-top: 3px;">
+                  <a data-toggle="collapse" href="#collapse_purchases" style="text-decoration: none;">
+                    Purchases: <%= number_to_currency(@customer_account.total_purchases, precision: 0) %>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="collapse_purchases" class="panel-collapse collapse">
+            <div class="panel-body" style="padding-bottom: 0;">
+              TBD
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

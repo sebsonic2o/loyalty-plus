@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115232653) do
+ActiveRecord::Schema.define(version: 20170116011544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170115232653) do
     t.integer  "reward_program_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "total_purchases",   default: 0, null: false
   end
 
   add_index "customer_accounts", ["brand_id"], name: "index_customer_accounts_on_brand_id", using: :btree
