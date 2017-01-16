@@ -1,0 +1,23 @@
+<div class="modal-wrapper">
+  <div class="inner-box modal-box" style="width: 500px;">
+    <div class="page-header" style="margin-top: 0;">
+      <span class="h4">Reward Program</span>
+    </div>
+    <%= form_for account, url: enroll_customer_account_path(account), html: { class: 'form-horizontal' }, method: :put, remote: true do |f| %>
+      <div class="form-group required" style="margin-bottom: 20px;">
+        <div class="col-sm-offset-3 col-sm-6">
+          <%= f.collection_select :reward_program_id, account.brand.reward_programs, :id, :name, { prompt: true }, {class: 'form-control', autocomplete: 'false'} %>
+        </div>
+      </div>
+
+      <span class="break-row"></span>
+
+      <div class="row">
+        <div class="col-sm-12" style="text-align: center;">
+          <%= f.submit 'Enroll', class: 'btn btn-primary' %>
+          <button type="button" class="btn btn-default" onclick="$('.modal-wrapper').remove();">Cancel</button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

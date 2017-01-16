@@ -1,0 +1,5 @@
+if ($('.modal-wrapper').length) {
+  $('.modal-wrapper').remove();
+}
+
+$('body').prepend("<%= escape_javascript(render 'enroll_form', account: @customer_account) %>");

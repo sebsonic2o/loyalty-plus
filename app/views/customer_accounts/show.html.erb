@@ -6,6 +6,17 @@
           <span class="h3"><%= @customer_account.brand.name %></span>
         </div>
 
+        <div style="padding: 0 8px 20px;">
+          <div class="row" style="font-size: 14px;">
+            <div class="col-sm-7">
+              Reward Program:
+              <span id="reward-program">
+                <%= render 'reward_program', account: @customer_account %>
+              </span>
+            </div>
+          </div>
+        </div>
+
         <div class="panel panel-default">
           <div class="panel-heading" style="padding-top: 3px; padding-bottom: 3px;">
             <div class="row">

@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   end
 
   authenticate :customer do
-    resources :customer_accounts, only: [:index, :show]
+    resources :customer_accounts, only: [:index, :show] do
+      member do
+        get :new_enrolment
+        put :enroll
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
