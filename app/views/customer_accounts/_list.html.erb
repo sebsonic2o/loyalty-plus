@@ -1,0 +1,14 @@
+<div style="margin: 0 20px;">
+    <% accounts.each do |account| %>
+      <%= link_to customer_account_path(account) do %>
+        <div class="row" style="margin-bottom: 15px; border: 1px solid #42a3db; border-radius: 2px;">
+          <div class="col-sm-12">
+            <h4><%= account.brand.name %></h4>
+          </div>
+          <div class="col-sm-12">
+            <p>Points: <%= account.points_balance %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+</div>

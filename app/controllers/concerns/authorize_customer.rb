@@ -8,7 +8,7 @@ private
     resource = args[:resources].singularize
     klass = args[:resources].classify.constantize
     args[:inst_var] ||= resource
-    args[:redirect_url] ||= brands_path
+    args[:redirect_url] ||= customer_accounts_path
     args[:customer_id] ||= :customer_id
 
     instance_variable_set("@#{args[:inst_var]}", klass.find(params["#{resource}_id"] || params[:id]))

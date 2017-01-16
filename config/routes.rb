@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   authenticate :customer do
-    resources :brands, only: :index
+    resources :customer_accounts, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

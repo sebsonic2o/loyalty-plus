@@ -1,19 +1,23 @@
 ## BRANDS ##
 
-Brand.create(name: 'Frontier Outdoor Supply',
-             account_id: 'aabacd',
-             secret_key: '123')
+brands = []
+
+brands << Brand.create(name: 'Frontier Outdoor Supply',
+                      account_id: 'aabacd',
+                      secret_key: '123')
+
+brands << Brand.create(name: 'Recreational Equipment Incorporated',
+                      account_id: 'bbcbde',
+                      secret_key: '123')
+
 
 ## CUSTOMERS ##
 
-Customer.create(email: 'sam@email.com',
-            password: '12345678',
-            password_confirmation: '12345678')
+emails = ['sam@email.com', 'sally@email.com', 'james@email.com']
 
-Customer.create(email: 'sally@email.com',
-            password: '12345678',
-            password_confirmation: '12345678')
-
-Customer.create(email: 'james@email.com',
-            password: '12345678',
-            password_confirmation: '12345678')
+emails.each do |email|
+  customer = Customer.create(email: email,
+                            password: '12345678',
+                            password_confirmation: '12345678')
+  customer.brands << brands
+end

@@ -1,0 +1,3 @@
+$('#account-count').html(<%= @accounts.total_count %>);
+$('#accounts-list').html("<%= escape_javascript(render 'list', accounts: @accounts) %>");
+$('#index-paginate').html("<%= escape_javascript(paginate(@accounts, remote: true).to_s) %>");

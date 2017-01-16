@@ -11,18 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115031414) do
+ActiveRecord::Schema.define(version: 20170115232653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: :cascade do |t|
-    t.string   "name"
-    t.string   "account_id"
-    t.string   "secret_key"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       default: "", null: false
+    t.string   "account_id", default: "", null: false
+    t.string   "secret_key", default: "", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
+
+  create_table "customer_accounts", force: :cascade do |t|
+    t.integer  "points_balance",    default: 0, null: false
+    t.integer  "customer_id"
+    t.integer  "brand_id"
+    t.integer  "reward_program_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "customer_accounts", ["brand_id"], name: "index_customer_accounts_on_brand_id", using: :btree
+  add_index "customer_accounts", ["customer_id"], name: "index_customer_accounts_on_customer_id", using: :btree
+  add_index "customer_accounts", ["reward_program_id"], name: "index_customer_accounts_on_reward_program_id", using: :btree
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
