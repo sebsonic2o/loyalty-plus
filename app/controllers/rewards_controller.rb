@@ -5,7 +5,7 @@ class RewardsController < ApplicationController
   end
 
   def new
-    @reward = @customer_account.rewards.new
+    @reward = @customer_account.rewards.new(points: nil)
 
     respond_to do |format|
       format.js
@@ -17,7 +17,7 @@ class RewardsController < ApplicationController
 
     respond_to do |format|
       if @reward.save
-        @last_rewards   = @customer_account.rewards.order(created_at: :desc).limit(10)
+        @last_rewards   = @customer_account.rewards.order(created_at: :desc).limit(5)
         format.js
       else
         format.js { render :new }

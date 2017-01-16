@@ -7,6 +7,7 @@
       <div class="form-group required" style="margin-bottom: 20px;">
         <div class="col-sm-offset-3 col-sm-6">
           <%= f.text_field :amount, class: 'form-control', placeholder: 'Amount' %>
+          <%= render 'shared/validation_error', model: purchase, attribute: :amount %>
         </div>
       </div>
 

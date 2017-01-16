@@ -2,5 +2,7 @@ if ($('.modal-wrapper').length) {
   $('.modal-wrapper').remove();
 }
 
+$('#points-balance').text("<%= @customer_account.points_balance %>");
+
 $('#reward-list').html("<%= escape_javascript(render 'list', rewards: @last_rewards) %>");
 $('#collapse_rewards').collapse('show');

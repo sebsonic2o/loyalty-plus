@@ -5,7 +5,7 @@ class PurchasesController < ApplicationController
   end
 
   def new
-    @purchase = @customer_account.purchases.new
+    @purchase = @customer_account.purchases.new(amount: nil)
 
     respond_to do |format|
       format.js
@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
 
     respond_to do |format|
       if @purchase.save
-        @last_purchases = @customer_account.purchases.order(created_at: :desc).limit(10)
+        @last_purchases = @customer_account.purchases.order(created_at: :desc).limit(5)
         format.js
       else
         format.js { render :new }

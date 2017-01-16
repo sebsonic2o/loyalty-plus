@@ -2,5 +2,8 @@ if ($('.modal-wrapper').length) {
   $('.modal-wrapper').remove();
 }
 
+$('#points-balance').text("<%= @customer_account.points_balance %>");
+$('#total-purchases').text("<%= number_to_currency(@customer_account.total_purchases, precision: 0) %>");
+
 $('#purchase-list').html("<%= escape_javascript(render 'list', purchases: @last_purchases) %>");
 $('#collapse_purchases').collapse('show');
