@@ -21,18 +21,19 @@
           <div class="panel-heading" style="padding-top: 3px; padding-bottom: 3px;">
             <div class="row">
               <div class="col-sm-12" style="margin: 7px auto;">
-                <div class="panel-title truncate" style="display: inline-block; width: 70%; margin-top: 3px;">
+                <div class="panel-title truncate" style="display: inline-block; width: 75%; margin-top: 3px;">
                   <a data-toggle="collapse" href="#collapse_rewards" style="text-decoration: none;">
                     Points: <%= @customer_account.points_balance %>
                   </a>
                 </div>
+                <%= link_to new_customer_account_reward_path(@customer_account), remote: true, class: 'btn btn-primary btn-sm pull-right', style: 'width: 70px;' do %>Redeem<% end %>
               </div>
             </div>
           </div>
 
           <div id="collapse_rewards" class="panel-collapse collapse">
-            <div class="panel-body" style="padding-bottom: 0;">
-              TBD
+            <div id="reward-list" class="panel-body" style="padding-bottom: 0;">
+              <%= render 'rewards/list', rewards: @last_rewards %>
             </div>
           </div>
         </div>
@@ -41,18 +42,19 @@
           <div class="panel-heading" style="padding-top: 3px; padding-bottom: 3px;">
             <div class="row">
               <div class="col-sm-12" style="margin: 7px auto;">
-                <div class="panel-title truncate" style="display: inline-block; width: 70%; margin-top: 3px;">
+                <div class="panel-title truncate" style="display: inline-block; width: 75%; margin-top: 3px;">
                   <a data-toggle="collapse" href="#collapse_purchases" style="text-decoration: none;">
                     Purchases: <%= number_to_currency(@customer_account.total_purchases, precision: 0) %>
                   </a>
                 </div>
+                <%= link_to new_customer_account_purchase_path(@customer_account), remote: true, class: 'btn btn-primary btn-sm pull-right', style: 'width: 70px;' do %>Buy<% end %>
               </div>
             </div>
           </div>
 
           <div id="collapse_purchases" class="panel-collapse collapse">
-            <div class="panel-body" style="padding-bottom: 0;">
-              TBD
+            <div id="purchase-list" class="panel-body" style="padding-bottom: 0;">
+              <%= render 'purchases/list', purchases: @last_purchases %>
             </div>
           </div>
         </div>

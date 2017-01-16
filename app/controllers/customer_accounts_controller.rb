@@ -12,6 +12,9 @@ class CustomerAccountsController < ApplicationController
   end
 
   def show
+    @last_purchases = @customer_account.purchases.order(created_at: :desc).limit(10)
+    @last_rewards   = @customer_account.rewards.order(created_at: :desc).limit(10)
+
     respond_to do |format|
       format.html
     end

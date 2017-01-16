@@ -12,6 +12,8 @@ Rails.application.routes.draw do
         get :new_enrolment
         put :enroll
       end
+      resources :rewards, only: [:new, :create]
+      resources :purchases, only: [:new, :create]
     end
   end
 

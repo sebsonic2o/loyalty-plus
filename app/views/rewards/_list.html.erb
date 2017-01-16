@@ -1,0 +1,20 @@
+<% if rewards.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Reward</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% rewards.each do |reward| %>
+        <tr>
+          <td><%= reward.created_at.strftime("%m/%d/%Y") %></td>
+          <td>You got a reward for <strong><%= reward.points %></strong> points</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="text-alert">No Rewards.</p>
+<% end %>

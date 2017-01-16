@@ -1,0 +1,6 @@
+if ($('.modal-wrapper').length) {
+  $('.modal-wrapper').remove();
+}
+
+$('#purchase-list').html("<%= escape_javascript(render 'list', purchases: @last_purchases) %>");
+$('#collapse_purchases').collapse('show');

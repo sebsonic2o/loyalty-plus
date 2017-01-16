@@ -1,0 +1,20 @@
+<% if purchases.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Purchase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% purchases.each do |purchase| %>
+        <tr>
+          <td><%= purchase.created_at.strftime("%m/%d/%Y") %></td>
+          <td>You bought <strong><%= number_to_currency(purchase.amount, precision: 0) %></strong> worth of goods</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="text-alert">No Purchases.</p>
+<% end %>

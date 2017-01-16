@@ -1,0 +1,6 @@
+if ($('.modal-wrapper').length) {
+  $('.modal-wrapper').remove();
+}
+
+$('#reward-list').html("<%= escape_javascript(render 'list', rewards: @last_rewards) %>");
+$('#collapse_rewards').collapse('show');

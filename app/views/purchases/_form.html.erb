@@ -1,0 +1,23 @@
+<div class="modal-wrapper">
+  <div class="inner-box modal-box" style="width: 500px;">
+    <div class="page-header" style="margin-top: 0;">
+      <span class="h4">Purchase</span>
+    </div>
+    <%= form_for [account, purchase], html: { class: 'form-horizontal' }, remote: true do |f| %>
+      <div class="form-group required" style="margin-bottom: 20px;">
+        <div class="col-sm-offset-3 col-sm-6">
+          <%= f.text_field :amount, class: 'form-control', placeholder: 'Amount' %>
+        </div>
+      </div>
+
+      <span class="break-row"></span>
+
+      <div class="row">
+        <div class="col-sm-12" style="text-align: center;">
+          <%= f.submit 'Buy', class: 'btn btn-primary' %>
+          <button type="button" class="btn btn-default" onclick="$('.modal-wrapper').remove();">Cancel</button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

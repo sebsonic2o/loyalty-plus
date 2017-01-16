@@ -1,7 +1,7 @@
 <% if account.reward_program %>
-  <span style="font-style: italic;"><%= account.reward_program.name %></span>
+  <span style="font-style: italic;"><%= account.reward_program.name %> - <%= pluralize(account.reward_program.points_dollar, 'point') %> per dollar</span>
 <% else %>
-  <%= link_to new_enrolment_customer_account_path(account), remote: true, class: "btn btn-warning btn-sm", style: "margin-left: 10px;" do %>
+  <%= link_to new_enrolment_customer_account_path(account), remote: true, class: 'btn btn-warning btn-sm', style: 'margin-left: 10px;' do %>
     <i class="glyphicon glyphicon-plus"></i> Enroll
   <% end %>
 <% end %>
